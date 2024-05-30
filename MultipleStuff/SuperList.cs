@@ -39,9 +39,21 @@ namespace MultipleStuff
 
             Console.WriteLine($"Min: {minmax.Min} | Max: {minmax.Max}");
         }
-        public void GetMinMax3()
+        public Tuple<double,double> GetMinMax3()
         {
-            
+            //They are the same for comparison purposes
+            double min = this[0]; 
+            double max = this[0]; 
+
+            foreach(double n in this)
+            {
+                if (n < min) min = n; //Gets the minimum value
+
+                else if (n > max) max = n; //Gets the maximum value
+            }
+
+            //Returns a tuple with the min and max values
+            return new Tuple<double, double>(min, max); 
         }
         public void GetMinMax4()
         {
