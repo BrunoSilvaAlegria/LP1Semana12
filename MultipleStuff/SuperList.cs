@@ -55,9 +55,20 @@ namespace MultipleStuff
             //Returns a tuple with the min and max values
             return new Tuple<double, double>(min, max); 
         }
-        public void GetMinMax4()
+        public (double MIN, double MAX) GetMinMax4()
         {
-            
+            //They are the same for comparison purposes
+            double min = this[0]; 
+            double max = this[0]; 
+
+            foreach(double n in this)
+            {
+                if (n < min) min = n; //Gets the minimum value
+
+                else if (n > max) max = n; //Gets the maximum value
+            }
+
+            return (min, max);
         }
 
         public struct MinMax 
