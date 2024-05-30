@@ -7,7 +7,10 @@ namespace Palindrome
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            foreach (string s in args)
+            {
+                Console.WriteLine($"{s} ---> {Palindrome(s)}");
+            }
         }
         public static bool Palindrome(string str)
         {
